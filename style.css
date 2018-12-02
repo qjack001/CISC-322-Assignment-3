@@ -1,9 +1,23 @@
+@font-face
+{
+    font-family: "Circ";
+    font-weight: normal;
+    src: url(./assets/CircularStd-Book.otf);
+}
+
+@font-face
+{
+    font-family: "Circ";
+    font-weight: bold;
+    src: url(./assets/CircularStd-Bold.otf);
+}
+
 html
 {
     background-color: #f7cccc;
     overflow: hidden;
     cursor: url(./assets/cursor-mouse.png), default;
-    font-family: "Circular Std";
+    font-family: "Circ";
     min-width: 640px;
 }
 
@@ -84,7 +98,7 @@ button
     border-radius: 5px 0 0 0;
     cursor: url("./assets/cursor-pointer.png"), pointer;
     float: left;
-    font-family: "Circular Std";
+    font-family: "Circ";
     margin-top: 0px;
     font-weight: bold;
     font-size: 2.0rem;
@@ -119,7 +133,7 @@ button:hover
     z-index: 9;
     background-color: #fff;
     text-align: center;
-    font-family: "Circular Std";
+    font-family: "Circ";
     font-size: 1.4rem;
 
     min-width: 280px;
@@ -138,7 +152,7 @@ button:hover
     background-size: 5px;
     background-image: url(./assets/pattern-dots-tiny.svg);
     color: #000;
-    font-family: "Circular Std";
+    font-family: "Circ";
     border-bottom: 3px solid #000;
     user-select: none;
     border-radius: 5px 5px 0px 0px;
