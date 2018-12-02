@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<!--
+
+This is an example website, using the Web-Based-Windows stylesheets and scripts.
+
+Jack Guianane 
+2018-07-31
+
+-->
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Windows</title>
+        
+        <link href="style.css" rel="stylesheet" type="text/css">
+        <script src="draggable.js" type="text/javascript"></script>
+    </head>
+
+    <body>
+        <script>
+            var presIndex = 0;
+            var reportIndex = 0;
+        </script>
+        <header>
+            <h1>Assignment 3</h1>
+            <a href="https://qjack001.github.io/CISC-322/" target="_blank">View Projects</a>
+            <a href="https://qjack001.github.io/CISC-322/team.html" target="_blank">View Team</a>
+            <a onclick="document.getElementById('help').style.display = 'block';">Help</a>
+            <p id="clock"></p>
+            <script>startTime()</script>
+        </header>
+        
+        <div class="icon" style="background-image: url(./assets/chrome.png);" onclick="document.getElementById('chrome').style.display = 'block';">Chrome</div>
+        
+        <div class="icon" style="background-image: url(./assets/understand.png);top:180px;" onclick="document.getElementById('understand').style.display = 'block';">Understand</div>
+        
+        <div class="icon" style="background-image: url(./assets/understand.png);left:120px;" onclick="document.getElementById('pres').style.display = 'block';">Pres.ppt</div>
+        
+        <div class="icon" style="background-image: url(./assets/understand.png);top:180px;left:120px;" onclick="document.getElementById('report').style.display = 'block';">Report.pdf</div>
+        
+        <div class="icon" style="background-image: url(./assets/understand.png);top:310px;" onclick="document.getElementById('read-me').style.display = 'block';">readMe.txt</div>
+        
+        <div class="window" id="understand" style="width:390px;top:306px;left:99px;display:none;">
+            <div class="window-header" id="understandheader">
+                <h2>Understand.exe</h2>
+                <button onclick="this.parentNode.parentNode.style.display = 'none';">×</button>
+            </div>
+            <div id="understand">
+                <img src="./assets/load.png">
+                <p>loading...</p>
+            </div>
+            
+        </div>
+        <script>dragElement(document.getElementById("understand"));</script>
+        
+        <div class="window" id="chrome" style="width:590px;height:500px;top:245px;left:618px;display:none;">
+            <div class="window-header" id="chromeheader">
+                <h2>Google Chrome</h2>
+                <button onclick="this.parentNode.parentNode.style.display = 'none';">×</button>
+            </div>
+            <div id="chrome" style="height:calc(100% - 44px);">
+                <iframe src="https://qjack001.github.io/CISC-322/" style="width:calc(100% - 4px);height:100%;border-radius:0 0 3px 3px;"></iframe>
+            </div>
+            
+        </div>
+        <script>dragElement(document.getElementById("chrome"));</script>
+        
+        <div class="window" id="pres" style="width:600px;height:400px;background-color:#000;top:74px;left:503px;">
+            <div class="window-header" id="presheader">
+                <h2>Presentation.ppt</h2>
+                <button onclick="this.parentNode.parentNode.style.display = 'none';">×</button>
+            </div>
+            <div id="pres-content" class="content" style="background-image: url(pres/0.png);">
+                <div class="prev button" onclick="presIndex = (presIndex - 1)%16;if(presIndex==-1){presIndex = 0;}document.getElementById('pres-content').style.backgroundImage = 'url(./pres/' + presIndex + '.png)';"></div>
+                <div class="next button" onclick="presIndex = (presIndex + 1)%16;document.getElementById('pres-content').style.backgroundImage = 'url(./pres/' + presIndex + '.png)';"></div>
+                <div class="download button"><p>Download</p></div>
+            </div>
+            
+        </div>
+        <script>dragElement(document.getElementById("pres"));</script>
+        
+        <div class="window" id="report" style="width:600px;height:400px;background-color:#000;top:160px;left:354px;display:none;">
+            <div class="window-header" id="reportheader">
+                <h2>Report.pdf</h2>
+                <button onclick="this.parentNode.parentNode.style.display = 'none';">×</button>
+            </div>
+            <div id="report-content" class="content" style="background-image: url(./report/0.png);">
+                <div class="prev button" onclick="reportIndex = (reportIndex - 1)%6;if(reportIndex==-1){reportIndex = 0;}document.getElementById('report-content').style.backgroundImage = 'url(./report/' + reportIndex + '.png)';"></div>
+                <div class="next button" onclick="reportIndex = (reportIndex + 1)%6;document.getElementById('report-content').style.backgroundImage = 'url(./report/' + reportIndex + '.png)';"></div>
+                <div class="download button"><p>Download</p></div>
+            </div>
+            
+        </div>
+        <script>dragElement(document.getElementById("report"));</script>
+        
+        <div class="window" id="read-me" style="width:390px;top:278px;left:312px;">
+            <div class="window-header" id="read-meheader">
+                <h2>readMe.txt</h2>
+                <button onclick="this.parentNode.parentNode.style.display = 'none';">×</button>
+            </div>
+            
+            <p>This is a draggable, resizable, and closable window, modeled after the early Windows operating systems.</p>
+            <p>Developed by Jack Guinane</p>
+            <p>(c) 2018</p>
+            
+        </div>
+        <script>dragElement(document.getElementById("read-me"));</script>
+
+        <div class="window" id="help" style="width:390px;top:55px;left:10px;display:none;">
+            <div class="window-header" id="helpheader">
+                <h2>Help.txt</h2>
+                <button onclick="this.parentNode.parentNode.style.display = 'none';">×</button>
+            </div>
+            
+            <p>This is a draggable, resizable, and closable window, modeled after the early Windows operating systems.</p>
+            <p>Developed by Jack Guinane</p>
+            <p>(c) 2018</p>
+            
+        </div>
+        <script>dragElement(document.getElementById("help"));</script>
+        
+    </body>
+</html>
