@@ -132,13 +132,18 @@ button:hover
     
     z-index: 9;
     background-color: #fff;
-    text-align: center;
+    text-align: left;
     font-family: "Circ";
-    font-size: 1.4rem;
+    font-size: 1rem;
 
     min-width: 280px;
     min-height: 50px;
     color: #dd7a7a;
+}
+
+.text p
+{
+    padding: 0 20px;
 }
 
 .window-header
@@ -177,6 +182,7 @@ button:hover
 #understand
 {
     background-color: #f7cccc;
+    text-align: center;
 }
 
 #understand p

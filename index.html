@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Windows</title>
-        
+        <meta charset="utf-8" />
+        <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, shrink-to-fit=no'>
+        <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <meta name="author" content="Jack Guinane" />
+        <link id="favicon" rel="shortcut icon" type="image/png" href="./assets/favicon.png">
+        <title>Assignment 3 - Inspect Element</title>
         <link href="style.css" rel="stylesheet" type="text/css">
         <script src="draggable.js" type="text/javascript"></script>
     </head>
@@ -66,7 +69,7 @@
             <div id="pres-content" class="content" style="background-image: url(pres/0.png);">
                 <div class="prev button" onclick="presIndex = (presIndex - 1)%16;if(presIndex==-1){presIndex = 0;}document.getElementById('pres-content').style.backgroundImage = 'url(./pres/' + presIndex + '.png)';"></div>
                 <div class="next button" onclick="presIndex = (presIndex + 1)%16;document.getElementById('pres-content').style.backgroundImage = 'url(./pres/' + presIndex + '.png)';"></div>
-                <div class="download button" onclick="window.open(https://github.com/qjack001/CISC-322-Assignment-3/raw/master/CISC-322-A3-PRES.pptx);"><p>Download</p></div>
+                <div class="download button" onclick="window.open('https://github.com/qjack001/CISC-322-Assignment-3/raw/master/CISC-322-A3-PRES.pptx');"><p>Download</p></div>
             </div>
             
         </div>
@@ -80,34 +83,30 @@
             <div id="report-content" class="content" style="background-image: url(./report/0.png);">
                 <div class="prev button" onclick="reportIndex = (reportIndex - 1)%6;if(reportIndex==-1){reportIndex = 0;}document.getElementById('report-content').style.backgroundImage = 'url(./report/' + reportIndex + '.png)';"></div>
                 <div class="next button" onclick="reportIndex = (reportIndex + 1)%6;document.getElementById('report-content').style.backgroundImage = 'url(./report/' + reportIndex + '.png)';"></div>
-                <div class="download button" onclick="window.open(https://github.com/qjack001/CISC-322-Assignment-3/raw/master/CISC-322-Assignment-3-Report.pdf);"><p>Download</p></div>
+                <div class="download button" onclick="window.open('https://github.com/qjack001/CISC-322-Assignment-3/raw/master/CISC-322-Assignment-3-Report.pdf');"><p>Download</p></div>
             </div>
             
         </div>
         <script>dragElement(document.getElementById("report"));</script>
         
-        <div class="window" id="read-me" style="width:390px;top:278px;left:312px;">
+        <div class="window text" id="read-me" style="width:390px;top:258px;left:312px;">
             <div class="window-header" id="read-meheader">
                 <h2>readMe.txt</h2>
                 <button onclick="this.parentNode.parentNode.style.display = 'none';">×</button>
             </div>
             
-            <p>This is a draggable, resizable, and closable window, modeled after the early Windows operating systems.</p>
-            <p>Developed by Jack Guinane</p>
-            <p>(c) 2018</p>
+            <p>This is Inspect Element's assignment 3 website. It contains links to our report and presentation. In this assignment, we propose the addition of an accessability subsystem, and analyze the possible modes of implementation.<br><br>Keeping in theme with our previous four websites, the design of this site reflects the concept of this report. Given that this assignment asked us to prospose a development to Chrome, we chose to explore the future of the web. With the dominance of websites over apps, the rise of Chromebooks, and other operating systems like WebOS, we beleive that the future of computing may be web-based. Thus, we decided to repersent this page as the desktop of a computer.<br><br>Click the 'HELP' button at the top if you have trouble navigating this site.</p>
             
         </div>
         <script>dragElement(document.getElementById("read-me"));</script>
 
-        <div class="window" id="help" style="width:390px;top:55px;left:10px;display:none;">
+        <div class="window text" id="help" style="width:390px;top:55px;left:10px;display:none;">
             <div class="window-header" id="helpheader">
                 <h2>Help.txt</h2>
                 <button onclick="this.parentNode.parentNode.style.display = 'none';">×</button>
             </div>
             
-            <p>This is a draggable, resizable, and closable window, modeled after the early Windows operating systems.</p>
-            <p>Developed by Jack Guinane</p>
-            <p>(c) 2018</p>
+            <p>Click the 'x' in the top left to close a window.<br>Drag from the top bar to move a window.<br>Click one of the icons to open that file.<br><br>The report can be found under 'report.pdf' and the presentation under 'pres.ppt'.</p>
             
         </div>
         <script>dragElement(document.getElementById("help"));</script>
